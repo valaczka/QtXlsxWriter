@@ -39,7 +39,9 @@
 #include "xlsxglobal.h"
 class QPoint;
 class QString;
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
 class QStringList;
+#endif
 class QColor;
 class QDateTime;
 class QTime;
@@ -63,8 +65,8 @@ XLSX_AUTOTEST_EXPORT QString unescapeSheetName(const QString &sheetName);
 XLSX_AUTOTEST_EXPORT bool isSpaceReserveNeeded(const QString &string);
 
 XLSX_AUTOTEST_EXPORT QString convertSharedFormula(const QString &rootFormula,
-                                                  const CellReference &rootCell,
-                                                  const CellReference &cell);
+												  const CellReference &rootCell,
+												  const CellReference &cell);
 
 } // QXlsx
 #endif // XLSXUTILITY_H

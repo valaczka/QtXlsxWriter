@@ -51,29 +51,29 @@ class Styles;
 class Q_XLSX_EXPORT XlsxColor
 {
 public:
-    explicit XlsxColor(const QColor &color = QColor());
-    explicit XlsxColor(const QString &theme, const QString &tint = QString());
-    explicit XlsxColor(int index);
+	explicit XlsxColor(const QColor &color = QColor());
+	explicit XlsxColor(const QString &theme, const QString &tint = QString());
+	explicit XlsxColor(int index);
 
-    bool isThemeColor() const;
-    bool isIndexedColor() const;
-    bool isRgbColor() const;
-    bool isInvalid() const;
+	bool isThemeColor() const;
+	bool isIndexedColor() const;
+	bool isRgbColor() const;
+	bool isInvalid() const;
 
-    QColor rgbColor() const;
-    int indexedColor() const;
-    QStringList themeColor() const;
+	QColor rgbColor() const;
+	int indexedColor() const;
+	QStringList themeColor() const;
 
-    operator QVariant() const;
+	operator QVariant() const;
 
-    static QColor fromARGBString(const QString &c);
-    static QString toARGBString(const QColor &c);
+	static QColor fromARGBString(const QString &c);
+	static QString toARGBString(const QColor &c);
 
-    bool saveToXml(QXmlStreamWriter &writer, const QString &node = QString()) const;
-    bool loadFromXml(QXmlStreamReader &reader);
+	bool saveToXml(QXmlStreamWriter &writer, const QString &node = QString()) const;
+	bool loadFromXml(QXmlStreamReader &reader);
 
 private:
-    QVariant val;
+	QVariant val;
 };
 
 #if !defined(QT_NO_DATASTREAM)
